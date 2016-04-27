@@ -323,13 +323,14 @@ def main(changefield,comments,timestamp):
       try: issuecount
       except: issuecount = 0
       try: maxresults
-      except: maxresults = 100
+      except: maxresults = 1000
       offset = ""
       maxstring = ""
       if maxresults:
+          maxstring = "&maxResults="+ str(maxresults)
           if issuecount >= maxresults:
              offset = "&startAt=" + str(issuecount)
-             maxstring = "&maxResults="+ str(maxresults)
+
 
       # jqlsearch
       if option == 'jqlsearch':
